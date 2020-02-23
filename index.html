@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="marsApp">
+
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>
+			Mars Weather Service
+		</title>
+		
+		<!-- Javascript Libs-->
+		<!-- JQuery -->
+		<script src="lib/jquery/jquery-1.12.0.min.js"></script>	
+		
+		<!-- Angular -->
+		<script src="lib/angular/angular.js"></script>
+
+		<!-- UI Router https://www.npmjs.com/package/angular-ui-router -->
+		<script src="lib/ui-router/angular-ui-router.min.js"></script>
+		
+		<!-- Javascript -->
+		<!-- Modules -->
+		<script src="js/app.js"></script>
+
+		<!-- Service -->
+		<script src="js/services/WeatherService.js"></script>
+
+		<!-- Controller -->
+		<script src="js/controllers/SolListController.js"></script>
+		<script src="js/controllers/SolViewController.js"></script>
+
+		<!-- Configuration -->
+		<script src="js/config/AngularConfig.js"></script>
+		<script src="js/config/RouteConfig.js"></script>
+
+		<!-- Constants -->
+		<script src="js/constants/AppConst.js"></script>
+	</head>
+
+	<body>
+		<ui-view style="display: flex; flex-direction: column; align-items: center;"></ui-view>
+	</body>
+</html>

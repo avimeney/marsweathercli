@@ -1,0 +1,42 @@
+<style type="text/css">
+	table {
+		border-collapse: collapse;
+	}
+	table td,th{
+		 border: solid 1px;
+		 padding: 5px;
+	}
+</style>
+
+<h1>Welcome to the Mars Weather Service!</h1>
+
+<span ng-if="isLoadingMessageVisible()">Loading data...</span>
+
+<span ng-if="isErrorMessageVisible()">{{errorMessage}}</span>
+
+<div ng-if="isDataSectionVisible()">
+	<h2>Available Sols' data:</h2>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Sol</th>
+				<th>Average temperature (&deg;C)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="solData in solList | orderBy: 'id':true">
+				<td><a href="" ng-click="solClicked(solData)">{{::solData.id}}</a></td>
+				<td style="text-align: center;">{{::solData.avg | number:3}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<button style="margin-top: 20px; display: block;" 
+		ng-if="isRefreshButtonVisible()"
+		ng-disabled="!isRefreshButtonEnabled()"
+		ng-click="refreshButtonClicked()">
+	Refresh
+</button>
+

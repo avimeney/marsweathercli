@@ -1,0 +1,26 @@
+<h1>Weather in Mars in Sol #{{::solData.id}}</h1>
+
+<span ng-if="isLoadingMessageVisible()">Loading data...</span>
+
+<span ng-if="isErrorMessageVisible()">{{errorMessage}}</span>
+
+<div ng-if="isDataSectionVisible()">
+	<table>
+		<tbody>
+			<tr>
+				<td>Average temperature:</td>
+				<td>{{::solData.avg}} &deg;C</td>
+			</tr>
+			<tr>
+				<td>Minimum temperature:</td>
+				<td>{{::solData.min}} &deg;C</td>
+			</tr>
+			<tr>
+				<td>Maximum temperature:</td>
+				<td>{{::solData.max}} &deg;C</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<button style="margin-top: 20px;" ng-click="returnButtonClicked()">Return to Sol list</button>
